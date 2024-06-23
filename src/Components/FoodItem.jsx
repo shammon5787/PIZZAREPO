@@ -8,7 +8,7 @@ const FoodItem = () => {
     <div className='pt-10 flex flex-wrap gap-3 items-center justify-center lg:justify-between'>
       {
         foodData.map((food)=>(
-          <FoodCard key={food.id} />
+          <FoodCard key={food.id} id = {food.id} name = {food.name} image = {food.image} desc = {food.desc} rating = {food.ratting} />
         ))
       }
     </div>
