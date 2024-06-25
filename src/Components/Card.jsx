@@ -10,7 +10,8 @@ const Card = () => {
 
     const [activeCard, setactiveCard] = useState(true)
 
-    // const totalQty = cartItem.reduce((totalQty , items)=>totalQty, items + items.qty);
+    const totalQty = cartItem.reduce((totalQty , items)=>totalQty + items.qty, 0);
+    const totalprice = cartItem.reduce((total , item)=>total + item.qty * item.price, 0);
 
     return (
         <>
@@ -26,8 +27,8 @@ const Card = () => {
                 }
 
                 <div className='bg-transparent absolute bottom-0'>
-                    <h1 className='bg-transparent text-slate-700'>Total Items:  </h1>
-                    <h1 className='bg-transparent text-slate-700'>Total Price: </h1>
+                    <h1 className='bg-transparent text-slate-700'>Total Items: {totalQty} </h1>
+                    <h1 className='bg-transparent text-slate-700'>Total Price: {totalprice} </h1>
                     <button className='mb-3 bg-blue-700 p-1 rounded-md text-white font-semibold w-[92vw] lg:w-[21vw]'>Check Out</button>
                 </div>
             </div>
